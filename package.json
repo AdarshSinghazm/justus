@@ -1,3 +1,4 @@
+
 {
   "name": "just-us",
   "private": true,
@@ -21,5 +22,8 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
     "vite": "^6.0.7"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
   }
 }
