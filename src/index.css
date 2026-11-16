@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-page: #FFFFFF;
+  --bg-gradient: radial-gradient(circle at 10% 15%, rgba(255, 204, 225, 0.45) 0%, transparent 45%),
+                 radial-gradient(circle at 90% 20%, rgba(255, 225, 240, 0.55) 0%, transparent 40%),
+                 radial-gradient(circle at 50% 45%, rgba(255, 240, 248, 0.8) 0%, transparent 60%),
+                 radial-gradient(circle at 15% 70%, rgba(255, 215, 235, 0.4) 0%, transparent 45%),
+                 radial-gradient(circle at 85% 85%, rgba(255, 195, 220, 0.35) 0%, transparent 45%),
+                 linear-gradient(180deg, #FFFFFF 0%, #FFF5F9 20%, #FFF8FC 45%, #FFF2F7 75%, #FFFFFF 100%);
+  --bg-nav: transparent;
+  --text-main: #342033;
+  --text-muted: rgba(52, 32, 51, 0.8);
+  --text-subtle: rgba(52, 32, 51, 0.45);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-border: rgba(245, 184, 206, 0.45);
+  --pill-bg: #FADCE7;
+  --pill-text: #FF2B75;
+  --pill-border: #F5B8CE;
+  --modal-bg: #FFFFFF;
+  --modal-card: #FFFFFF;
+  --blob-opacity: 0.5;
+  --polaroid-bg: #FFFFFF;
+  --polaroid-card: #FADCE7;
+  --btn-shadow: #342033;
+  --pill-yellow-bg: #FEF7DE;
+  --pill-yellow-border: #F4E7B0;
+  --pill-yellow-text: #342033;
+  --pill-peach-bg: #FDF0E7;
+  --pill-peach-border: #F7DAC5;
+  --pill-peach-text: #342033;
+}
+
+html.dark,
+body.dark,
+.dark {
+  --bg-page: #150B17;
+  --bg-gradient: radial-gradient(circle at 15% 15%, rgba(255, 43, 117, 0.18) 0%, transparent 45%),
+                 radial-gradient(circle at 85% 25%, rgba(214, 51, 132, 0.15) 0%, transparent 45%),
+                 radial-gradient(circle at 20% 60%, rgba(255, 43, 117, 0.12) 0%, transparent 45%),
+                 radial-gradient(circle at 80% 85%, rgba(186, 33, 107, 0.15) 0%, transparent 45%),
+                 linear-gradient(180deg, #150B17 0%, #1A0D1E 30%, #1D0F22 60%, #130915 100%);
+  --bg-nav: transparent;
+  --text-main: #F7E7F0;
+  --text-muted: rgba(247, 231, 240, 0.8);
+  --text-subtle: rgba(247, 231, 240, 0.45);
+  --card-bg: rgba(36, 21, 39, 0.9);
+  --card-border: #47274D;
+  --pill-bg: #3D1C36;
+  --pill-text: #FF8BB7;
+  --pill-border: rgba(255, 43, 117, 0.35);
+  --modal-bg: #1C1020;
+  --modal-card: #241527;
+  --blob-opacity: 0.15;
+  --polaroid-bg: #241527;
+  --polaroid-card: #3D1C36;
+  --btn-shadow: #FF2B75;
+  --pill-yellow-bg: #2F2716;
+  --pill-yellow-border: #5C4D28;
+  --pill-yellow-text: #FCE18F;
+  --pill-peach-bg: #2E1B17;
+  --pill-peach-border: #5C372E;
+  --pill-peach-text: #FAC8BD;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  body {
+    background-color: var(--bg-page);
+    background-image: var(--bg-gradient);
+    background-attachment: fixed;
+    color: var(--text-main);
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  ::selection {
+    background-color: #FF2B75;
+    color: #FFFFFF;
+  }
+}
+
+@layer utilities {
+  .bg-theme-page { 
+    background-color: var(--bg-page);
+    background-image: var(--bg-gradient);
+    background-attachment: fixed;
+  }
+  .bg-theme-nav { background-color: var(--bg-nav); }
+  .bg-theme-card { background-color: var(--card-bg); }
+  .border-theme-border { border-color: var(--card-border); }
+  .bg-theme-pill { background-color: var(--pill-bg); }
+  .text-theme-pillText { color: var(--pill-text); }
+  .border-theme-pillBorder { border-color: var(--pill-border); }
+  .text-theme-text { color: var(--text-main); }
+  .text-theme-muted { color: var(--text-muted); }
+  .text-theme-subtle { color: var(--text-subtle); }
+  .bg-theme-modal { background-color: var(--modal-bg); }
+  .bg-theme-modalCard { background-color: var(--modal-card); }
+  .bg-theme-polaroid { background-color: var(--polaroid-bg); }
+  .bg-theme-polaroidCard { background-color: var(--polaroid-card); }
+  .bg-pill-yellow { background-color: var(--pill-yellow-bg); }
+  .border-pill-yellow { border-color: var(--pill-yellow-border); }
+  .text-pill-yellow { color: var(--pill-yellow-text); }
+  .bg-pill-peach { background-color: var(--pill-peach-bg); }
+  .border-pill-peach { border-color: var(--pill-peach-border); }
+  .text-pill-peach { color: var(--pill-peach-text); }
+}
+
+.font-cute {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.font-cursive {
+  font-family: 'Caveat', cursive;
+}
+
+/* Custom clean scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pill-bg);
+  border-radius: 9999px;
+  border: 1px solid var(--text-main);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF2B75;
+}
